@@ -3,8 +3,10 @@ import { CatsController } from './cats.controller';
 import { CatsService } from './cats.service';
 import { PrismaService } from '../database/prisma/prisma.service';
 import { CatsRepository } from './cats.repository';
+import { AppCacheModule } from '../cache/cache.module';
 
 @Module({
+  imports: [AppCacheModule],
   providers: [CatsService, CatsRepository, PrismaService],
   controllers: [CatsController],
 })
